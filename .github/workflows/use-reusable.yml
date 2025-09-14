@@ -80,6 +80,8 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/reusable.yml
+    with:
+      artifact-name: dist-files
   # This job will be executed, when any job fails
   report:
     needs: [lint, deploy]
